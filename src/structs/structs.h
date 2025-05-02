@@ -7,14 +7,15 @@
 #include <vector>
 
 struct Pallet {
+  int id;
   int weight;
   int profit;
-}
+};
 
 struct Truck {
   int capacity;
-  std::vector<Pallet>;
-}
+  std::vector<Pallet> pallets;
+};
 
 #define STRUCTS_H
 

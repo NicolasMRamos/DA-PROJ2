@@ -6,6 +6,11 @@ project(DA_PROJ2)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Disable experimental C++20 modules
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-modules-ts")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-p1689")
+set(CMAKE_EXPERIMENTAL_CXX_MODULE_CMAKE_API "OFF")
+
 # Define source and header directories
 set(SRC_DIR "${CMAKE_SOURCE_DIR}/src/algorithms")
 set(HEADERS_DIR "${CMAKE_SOURCE_DIR}/src/headers")
@@ -19,4 +24,4 @@ file(GLOB_RECURSE HEADERS "${HEADERS_DIR}/*.h" "${STRUCTS_DIR}/*.h")
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 # Include directories
-include_directories(${HEADERS_DIR} ${DATA_STRUCTURES_DIR})
+include_directories(${HEADERS_DIR} ${STRUCTS_DIR})

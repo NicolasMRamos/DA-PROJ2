@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "parsing.h"
+#include "greedy.h"
 
 int main(){
   int dataset;
@@ -23,11 +24,22 @@ int main(){
   std::pair<int, int> capPal = parseTruck(filenameTruck);
   std::vector<Pallet> pallets = parsePallets(filenamePallets, capPal.second);
 
-  for (auto i:pallets) {
+  /*for (auto i:pallets) {
     std::cout << "Pallet: " << i.id << ' ' << i.weight << ' ' << i.profit << '\n';
   }
 
-  std::cout << "Truck: " << capPal.first << ' ' << capPal.second << '\n';
+  std::cout << "Truck: " << capPal.first << ' ' << capPal.second << '\n';*/
+
+  std::cout << "Greedy approach:\n";
+
+  auto result = greedyApproach(pallets, capPal.first);
+
+  std::cout << "Total profit: " << result.first << '\n';
+  std::cout << "Pallets: ";
+  for (auto i:result.second)
+  {
+      std::cout << i << ' ';
+  }
 
   return 0;
 }

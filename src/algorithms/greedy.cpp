@@ -5,6 +5,22 @@
 
 using namespace std;
 
+/**
+ * @brief Solves the 0/1 Knapsack problem using a greedy approach based on profit-to-weight ratio.
+ *
+ * This function selects pallets by prioritizing those with the highest profit-to-weight ratio,
+ * packing them into the truck until the capacity is exhausted. The solution is suboptimal but efficient.
+ *
+ * @param pallets A vector of `Pallet` objects, each with `id`, `weight`, and `profit` fields.
+ * @param capacity The maximum weight capacity of the truck.
+ * @return A `pair` where:
+ *         - `first` is the total profit of the selected pallets.
+ *         - `second` is a vector of IDs of the selected pallets.
+ *
+ * @note Time complexity: O(n log n) due to sorting, where `n` is the number of pallets.
+ * @note Space complexity: O(n) for storing the ratios and selected pallets.
+ */
+
 std::pair<int, vector<int>> greedyApproach(vector<Pallet> &pallets, int capacity) {
     std::vector<std::pair<double, int>> ratios(pallets.size());
     for (int i = 0; i < pallets.size(); ++i) {

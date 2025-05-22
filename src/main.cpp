@@ -18,6 +18,9 @@ int main(){
   if (dataset < 10) {
     number = '0' + std::to_string(dataset);
   }
+  else {
+    number = std::to_string(dataset);
+  }
 
   std::string filenameTruck = "../data/TruckAndPallets_" + number + ".csv";
   std::string filenamePallets = "../data/Pallets_" + number + ".csv";

@@ -1,9 +1,6 @@
-//
-// Created by Nicolas Magalhães on 10/04/2025.
-//
-
 #ifndef STRUCTS_H
 
+#define STRUCTS_H
 #include <vector>
 
 struct Pallet {
@@ -17,6 +14,8 @@ struct Truck {
   std::vector<Pallet> pallets;
 };
 
-#define STRUCTS_H
+inline bool operator<(const Pallet &lhs, const Pallet &rhs) {
+  return lhs.weight < rhs.weight;
+}
 
 #endif //STRUCTS_H

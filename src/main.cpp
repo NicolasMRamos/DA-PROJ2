@@ -6,7 +6,7 @@
 
 #include "parsing.h"
 #include "greedy.h"
-#include "bruteforce.h"
+#include "backtracking.h"
 
 int main(){
   int dataset;
@@ -42,9 +42,9 @@ int main(){
       std::cout << i << ' ';
   }
   std::cout << '\n';
-  std::cout << "Brute Force approach:\n";
+  std::cout << "Backtracking approach:\n";
 
-  result = bruteForceApproach(pallets, capPal.first);
+  result = backtrackingApproach(pallets, capPal.first);
 
   std::cout << "Total profit: " << result.first << '\n';
   std::cout << "Pallets: ";

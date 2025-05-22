@@ -1,6 +1,6 @@
 /**
-* @file briteforce.h
- * @brief Header for the brute forve algorithm implementation of the 0/1 Knapsack problem.
+* @file backtracking.h
+ * @brief Header for the backtracking algorithm implementation of the 0/1 Knapsack problem.
  */
 
 #ifndef BRUTEFORCE_H
@@ -8,12 +8,12 @@
 
 #include <utility>
 #include <vector>
-#include "structs.h"
+#include "../structs/structs.h"
 
 /**
- * @brief Solves the 0/1 Knapsack problem using a brute force approach.
+ * @brief Solves the 0/1 Knapsack problem using a backtracking approach.
  *
- * The algorithm tries all possible combinations and chooses the best.
+ * The algorithm tries various combinations (as a decision tree), prunes impossible branches and chooses the best.
  *
  * @param pallets Reference to a vector of `Pallet` objects (defined in `structs.h`).
  *                Each pallet must have `id`, `weight`, and `profit` fields.
@@ -22,11 +22,11 @@
  *         - `first` is the total profit of selected pallets.
  *         - `second` is a vector of IDs of the selected pallets.
  *
- * @note Time complexity: O(2^n) for testing all combinations.
+ * @note Time complexity: O(2^n), in the worst case, tries all combinations.
  * @note Space complexity: O(n) for storing the solution.
- * @see bruteforce.cpp for the implementation.
+ * @see backtracking.cpp for the implementation.
  */
 
-std::pair<int, std::vector<int>> bruteForceApproach(std::vector<Pallet> &pallets, int capacity);
+std::pair<int, std::vector<int>> backtrackingApproach(const std::vector<Pallet> &pallets, int capacity);
 
 #endif //BRUTEFORCE_H

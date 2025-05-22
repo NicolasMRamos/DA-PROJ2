@@ -6,6 +6,7 @@
 
 #include "parsing.h"
 #include "greedy.h"
+#include "bruteforce.h"
 
 int main(){
   int dataset;
@@ -40,6 +41,18 @@ int main(){
   {
       std::cout << i << ' ';
   }
+  std::cout << '\n';
+  std::cout << "Brute Force approach:\n";
+
+  result = bruteForceApproach(pallets, capPal.first);
+
+  std::cout << "Total profit: " << result.first << '\n';
+  std::cout << "Pallets: ";
+  for (auto i:result.second)
+  {
+    std::cout << i << ' ';
+  }
+  std::cout << '\n';
 
   return 0;
 }

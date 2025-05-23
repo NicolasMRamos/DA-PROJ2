@@ -7,6 +7,7 @@
 #include "parsing.h"
 #include "greedy.h"
 #include "backtracking.h"
+#include "dynamicprog.h"
 
 int main(){
   int dataset;
@@ -34,9 +35,21 @@ int main(){
 
   std::cout << "Truck: " << capPal.first << ' ' << capPal.second << '\n';*/
 
+  std::cout << "Backtracking approach:\n";
+
+  auto result = backtrackingApproach(pallets, capPal.first);
+
+  std::cout << "Total profit: " << result.first << '\n';
+  std::cout << "Pallets: ";
+  for (auto i:result.second)
+  {
+    std::cout << i << ' ';
+  }
+  std::cout << '\n';
+
   std::cout << "Greedy approach:\n";
 
-  auto result = greedyApproach(pallets, capPal.first);
+  result = greedyApproach(pallets, capPal.first);
 
   std::cout << "Total profit: " << result.first << '\n';
   std::cout << "Pallets: ";
@@ -45,9 +58,10 @@ int main(){
       std::cout << i << ' ';
   }
   std::cout << '\n';
-  std::cout << "Backtracking approach:\n";
 
-  result = backtrackingApproach(pallets, capPal.first);
+  std::cout << "Dynamic Programming approach:\n";
+
+  result = dpApproach(pallets, capPal.first);
 
   std::cout << "Total profit: " << result.first << '\n';
   std::cout << "Pallets: ";

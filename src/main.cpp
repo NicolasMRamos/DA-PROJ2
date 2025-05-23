@@ -1,3 +1,14 @@
+/**
+* @file main.cpp
+ * @brief Entry point of the application that allows the user to load datasets,
+ *        select algorithmic approaches, and execute optimization logic.
+ *
+ * This application simulates the loading and selection of pallets for a truck
+ * based on various algorithmic strategies. It includes a user-driven menu system,
+ * supports multiple datasets and the following approaches:
+ * Brute Force, Greedy, Dynamic Programming and ILP.
+ */
+
 #include <iostream>
 
 #include "menu.h"

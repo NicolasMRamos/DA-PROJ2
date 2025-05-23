@@ -1,4 +1,3 @@
-#include <algorithm>
 #include "backtracking.h"
 
 std::pair<int, std::vector<int>> backtrackingAux(const std::vector<Pallet> &pallets, int currentValue, int remainingCapacity, const std::vector<int> &state, int element) {

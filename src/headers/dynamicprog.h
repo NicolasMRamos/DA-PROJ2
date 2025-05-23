@@ -8,8 +8,7 @@
 
 #include "structs.h"
 #include <vector>
-
-using namespace std;
+#include <algorithm>
 
 /**
  * @brief Solves the 0/1 Knapsack problem using dynamic programming.
@@ -29,6 +28,6 @@ using namespace std;
  * @note Space complexity: O(n * W) due to the DP table.
  */
 
-pair<int, vector<int>> dpApproach(const vector<Pallet>& pallets, int capacity);
+std::pair<int, std::vector<int>> dpApproach(const std::vector<Pallet>& pallets, int capacity);
 
 #endif //DYNAMICPROG_H

@@ -8,6 +8,7 @@
 
 #include "structs.h"
 #include <vector>
+#include <algorithm>
 
 /**
  * @brief Solves the 0/1 Knapsack problem using a greedy approach.

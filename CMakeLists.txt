@@ -12,7 +12,7 @@ set(CMAKE_EXPERIMENTAL_CXX_MODULE_CMAKE_API "OFF")
 # Define source and header directories
 set(SRC_DIR "${CMAKE_SOURCE_DIR}/src/algorithms")
 set(HEADERS_DIR "${CMAKE_SOURCE_DIR}/src/headers")
-set(STRUCTS_DIR "${CMAKE_SOURCE_DIR}/src/structs")
+set(STRUCTS_DIR "${CMAKE_SOURCE_DIR}/src/other")
 
 # Gather source files
 file(GLOB_RECURSE SOURCES "${CMAKE_SOURCE_DIR}/src/*.cpp")

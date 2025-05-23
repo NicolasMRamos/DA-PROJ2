@@ -1,24 +1,14 @@
-
-//
-// Created by Nicolas Magalhães on 10/04/2025.
-//
-
-#include <fstream>
 #include "parsing.h"
 
-#include <iostream>
-
-using namespace std;
-
-vector<Pallet> parsePallets(const std::string & file, int n_pallets) {
+std::vector<Pallet> parsePallets(const std::string & file, int n_pallets) {
     Pallet pallet{};
     std::vector<Pallet> result(n_pallets);
-    string line;
-    ifstream f;
+    std::string line;
+    std::ifstream f;
     f.open(file);
 
     if (!f.is_open()) {
-        cerr << "No file found.\n";
+        std::cerr << "No file found.\n";
         return result;
     }
 
@@ -26,7 +16,7 @@ vector<Pallet> parsePallets(const std::string & file, int n_pallets) {
 
     while (getline(f, line)) {
 
-        if (line.find(',') == string::npos) continue;
+        if (line.find(',') == std::string::npos) continue;
         size_t separator = line.find(',');
         pallet.id = stoi(line.substr(0, separator));
         line.erase(0, separator + 1);
@@ -45,15 +35,15 @@ vector<Pallet> parsePallets(const std::string & file, int n_pallets) {
     return result;
 }
 
-pair<int, int> parseTruck(const std::string &file) {
-    pair<int, int> info{};
+std::pair<int, int> parseTruck(const std::string &file) {
+    std::pair<int, int> info{};
 
-    string line;
-    ifstream f;
+    std::string line;
+    std::ifstream f;
     f.open(file);
 
     if (!f.is_open()) {
-        cerr << "No file found.\n";
+        std::cerr << "No file found.\n";
         return info;
     }
 

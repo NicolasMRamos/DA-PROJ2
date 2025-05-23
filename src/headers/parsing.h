@@ -1,15 +1,11 @@
-//
-// Created by Nicolas Magalhães on 10/04/2025.
-//
-
 #ifndef PARSING_H
 #define PARSING_H
 
+#include "structs.h"
 #include <string>
 #include <vector>
-#include "../structs/structs.h"
-
-
+#include <fstream>
+#include <iostream>
 
 std::vector<Pallet> parsePallets(const std::string &file, int n_pallets);
 std::pair<int, int> parseTruck(const std::string &file);

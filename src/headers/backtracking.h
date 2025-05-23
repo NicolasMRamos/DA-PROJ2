@@ -6,9 +6,10 @@
 #ifndef BRUTEFORCE_H
 #define BRUTEFORCE_H
 
+#include "structs.h"
 #include <utility>
 #include <vector>
-#include "../structs/structs.h"
+#include <algorithm>
 
 /**
  * @brief Solves the 0/1 Knapsack problem using a backtracking approach.

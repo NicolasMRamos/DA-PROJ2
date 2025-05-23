@@ -7,8 +7,6 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Disable experimental C++20 modules
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-modules-ts")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-p1689")
 set(CMAKE_EXPERIMENTAL_CXX_MODULE_CMAKE_API "OFF")
 
 # Define source and header directories

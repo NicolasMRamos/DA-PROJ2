@@ -94,14 +94,6 @@ void run(const int approach, const std::pair<int, int> &capPal, std::vector<Pall
 
         std::pair<int, std::vector<int>> result;
 
-        /*
-        for (auto i:pallets) {
-          std::cout << "Pallet: " << i.id << ' ' << i.weight << ' ' << i.profit << '\n';
-        }
-
-        std::cout << "Truck: " << capPal.first << ' ' << capPal.second << '\n';
-        */
-
         if (approach == 1) {
             result = backtrackingApproach(pallets, capPal.first);
         } else if (approach == 2) {
@@ -109,8 +101,7 @@ void run(const int approach, const std::pair<int, int> &capPal, std::vector<Pall
         } else if (approach == 3) {
             result = dpApproach(pallets, capPal.first);
         } else if (approach == 4) {
-            std::cout << std::endl;
-            std::cout << "ILP placeholder" << std::endl;
+            result = ilpApproach(pallets, capPal.first);
         }
 
         std::cout << std::endl;

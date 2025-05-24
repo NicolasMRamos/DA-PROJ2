@@ -11,6 +11,7 @@
 #include "greedy.h"
 #include "backtracking.h"
 #include "dynamicprog.h"
+#include "ilp.h"
 
 /**
  * @brief Displays the main menu and prompts the user for a selection.
